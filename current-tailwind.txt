@@ -9,10 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#FFF0F3",  // Light pink background
-        primary: "#FF2E63",     // Dark pink accent
-        secondary: "#252A34",   // Dark shade for text
-        accent: "#FF2E63",      // Same as primary for consistency
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: "#2563eb", // Blue color for accents
       },
     },
   },

@@ -3,19 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-secondary;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .neo-brutalist-card {
+    @apply bg-white border-[3px] border-secondary shadow-[8px_8px_0px_0px_rgba(37,42,52,1)]
+           transition-all duration-300;
+  }
+
+  .neo-brutalist-card:hover {
+    @apply translate-x-[3px] translate-y-[3px] shadow-none;
+  }
+
+  .neo-brutalist-button {
+    @apply bg-primary text-white px-6 py-3 font-bold border-2 border-secondary
+           hover:shadow-[4px_4px_0px_0px_rgba(37,42,52,1)]
+           hover:-translate-y-0.5 transition-all duration-300;
+  }
+}
+
+/* Add these rules to hide default cursors */
+* {
+  cursor: none !important;
+}
+
+/* Optional: Hide cursor completely on touch devices */
+@media (hover: none) {
+  * {
+    cursor: auto !important;
+  }
+  #custom-cursor {
+    display: none;
+  }
 }
