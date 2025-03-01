@@ -39,4 +39,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# project specific
+/once-ui-temp
+/docs
+repomix-output.txt
+
 .vercel
