@@ -11,6 +11,11 @@ interface Skill {
     level: number // 1-5
     color?: string
   }[]
+  certifications?: {
+    name: string
+    issuer?: string
+    date?: string
+  }[]
 }
 
 const skills: Skill[] = [
