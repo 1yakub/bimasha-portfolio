@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Container from '@/components/ui/container'
 import { ArrowUpRight, Github, ExternalLink, ArrowLeft, Code } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import MotionLink from '@/components/ui/motion-link'
 import MotionDiv from '@/components/ui/motion-div'
 
@@ -150,10 +151,12 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
     >
       {project.image && (
         <div className="relative h-48 overflow-hidden">
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transform group-hover:scale-105 transition-transform duration-300"
           />
         </div>
       )}

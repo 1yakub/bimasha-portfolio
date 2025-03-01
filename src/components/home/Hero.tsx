@@ -4,6 +4,7 @@ import { ArrowRight, ArrowDown, Github, Linkedin } from 'lucide-react';
 import MotionLink from '@/components/ui/motion-link';
 import MotionSpan from '@/components/ui/motion-span';
 import MotionDiv from '@/components/ui/motion-div';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -125,11 +126,14 @@ export default function Hero() {
           >
             <div className="relative brutalist-container overflow-hidden">
               <div className="brutalist-offset"></div>
-              <div className="relative z-10">
-                <img 
+              <div className="relative z-10 w-full h-full aspect-[3/4]">
+                <Image 
                   src="/images/profile.jpg" 
                   alt="Bimasha - Full Stack Developer" 
-                  className="w-full h-auto object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  priority
+                  className="object-cover"
                 />
               </div>
             </div>

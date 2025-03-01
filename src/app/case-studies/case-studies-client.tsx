@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Container from '@/components/ui/container'
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // Case studies data
 const caseStudies = [
@@ -152,18 +153,22 @@ function CaseStudyCard({ study, index }: { study: any; index: number }) {
                       className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       aria-label={study.title}
                     >
-                      <img 
+                      <Image 
                         src={study.image}
                         alt={study.title}
-                        className="w-full h-full object-contain"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-contain"
                       />
                     </object>
                   </div>
                 ) : (
-                  <img 
+                  <Image 
                     src={study.image}
                     alt={study.title}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
               </div>
