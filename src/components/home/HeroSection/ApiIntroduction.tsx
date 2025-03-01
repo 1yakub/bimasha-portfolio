@@ -40,7 +40,7 @@ export default function ApiIntroduction() {
           transition={{ delay: 0.4 }}
           className="text-gray-500 dark:text-gray-400"
         >
-          .then(response => response.json())
+          {".then(response => response.json())"}
         </motion.div>
 
         <motion.div
