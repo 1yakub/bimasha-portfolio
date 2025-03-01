@@ -152,7 +152,7 @@ export default function Header() {
               {/* Social links integrated in navbar */}
               <div className="flex items-center gap-3">
                 <MotionLink
-                  href="https://github.com/yourusername"
+                  href="https://github.com/bimasha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black hover:text-black/70 transition-colors duration-300"
@@ -162,7 +162,7 @@ export default function Header() {
                   <Github size={18} />
                 </MotionLink>
                 <MotionLink
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/bimasha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black hover:text-black/70 transition-colors duration-300"
@@ -172,7 +172,7 @@ export default function Header() {
                   <Linkedin size={18} />
                 </MotionLink>
                 <MotionLink
-                  href="https://twitter.com/yourusername"
+                  href="https://twitter.com/bimasha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black hover:text-black/70 transition-colors duration-300"
@@ -322,7 +322,7 @@ export default function Header() {
             {/* Social links in mobile menu */}
             <div className="flex items-center gap-5 mt-8 border-3 border-black rounded-xl p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <MotionLink
-                href="https://github.com/yourusername"
+                href="https://github.com/bimasha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-black/70 transition-colors duration-300"
@@ -333,7 +333,7 @@ export default function Header() {
                 <Github size={20} />
               </MotionLink>
               <MotionLink
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/bimasha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-black/70 transition-colors duration-300"
@@ -344,7 +344,7 @@ export default function Header() {
                 <Linkedin size={20} />
               </MotionLink>
               <MotionLink
-                href="https://twitter.com/yourusername"
+                href="https://twitter.com/bimasha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-black/70 transition-colors duration-300"
