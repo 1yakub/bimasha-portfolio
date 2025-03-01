@@ -108,7 +108,7 @@ export function ContactForm() {
             href="https://github.com/bimasha" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-accent hover:bg-gray-200 transition-colors"
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-[#333333] hover:bg-gray-200 transition-colors"
             aria-label="GitHub Profile"
           >
             <FaGithub size={20} />
@@ -118,7 +118,7 @@ export function ContactForm() {
             href="https://linkedin.com/in/bimasha" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-accent hover:bg-gray-200 transition-colors"
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-[#0077B5] hover:bg-gray-200 transition-colors"
             aria-label="LinkedIn Profile"
           >
             <FaLinkedin size={20} />
@@ -128,7 +128,7 @@ export function ContactForm() {
             href="https://twitter.com/bimasha" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-accent hover:bg-gray-200 transition-colors"
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-[#1DA1F2] hover:bg-gray-200 transition-colors"
             aria-label="Twitter Profile"
           >
             <FaTwitter size={20} />
@@ -136,7 +136,7 @@ export function ContactForm() {
           <motion.a 
             whileHover={{ y: -3 }}
             href="mailto:contact@bimasha.com" 
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-accent hover:bg-gray-200 transition-colors"
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-[#EA4335] hover:bg-gray-200 transition-colors"
             aria-label="Email Contact"
           >
             <MdEmail size={20} />

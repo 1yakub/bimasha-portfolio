@@ -155,7 +155,7 @@ export default function Header() {
                   href="https://github.com/bimasha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:text-black/70 transition-colors duration-300"
+                  className="text-black hover:text-[#333333] transition-colors duration-300"
                   whileHover={{ y: -2 }}
                   aria-label="GitHub Profile"
                 >
@@ -165,7 +165,7 @@ export default function Header() {
                   href="https://linkedin.com/in/bimasha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:text-black/70 transition-colors duration-300"
+                  className="text-black hover:text-[#0077B5] transition-colors duration-300"
                   whileHover={{ y: -2 }}
                   aria-label="LinkedIn Profile"
                 >
@@ -175,7 +175,7 @@ export default function Header() {
                   href="https://twitter.com/bimasha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:text-black/70 transition-colors duration-300"
+                  className="text-black hover:text-[#1DA1F2] transition-colors duration-300"
                   whileHover={{ y: -2 }}
                   aria-label="Twitter Profile"
                 >
@@ -325,7 +325,7 @@ export default function Header() {
                 href="https://github.com/bimasha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-black/70 transition-colors duration-300"
+                className="text-black hover:text-[#333333] transition-colors duration-300"
                 whileHover={{ y: -2 }}
                 aria-label="GitHub Profile"
                 tabIndex={isOpen ? 0 : -1}
@@ -336,7 +336,7 @@ export default function Header() {
                 href="https://linkedin.com/in/bimasha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-black/70 transition-colors duration-300"
+                className="text-black hover:text-[#0077B5] transition-colors duration-300"
                 whileHover={{ y: -2 }}
                 aria-label="LinkedIn Profile"
                 tabIndex={isOpen ? 0 : -1}
@@ -347,7 +347,7 @@ export default function Header() {
                 href="https://twitter.com/bimasha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-black/70 transition-colors duration-300"
+                className="text-black hover:text-[#1DA1F2] transition-colors duration-300"
                 whileHover={{ y: -2 }}
                 aria-label="Twitter Profile"
                 tabIndex={isOpen ? 0 : -1}
