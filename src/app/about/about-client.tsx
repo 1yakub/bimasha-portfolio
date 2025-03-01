@@ -412,38 +412,42 @@ const AboutClient = () => {
             {/* Social Links */}
             <div className="mt-8 flex gap-4">
               <motion.a 
-                whileHover={{ y: -3 }}
+                whileHover={{ y: -3, scale: 1.1 }}
                 href="https://github.com/bimasha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-secondary-dark/10 flex items-center justify-center text-secondary/70 hover:text-primary dark:text-secondary-dark/70 dark:hover:text-primary-dark transition-colors"
+                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                aria-label="GitHub Profile"
               >
-                <FaGithub size={20} />
+                <FaGithub size={24} />
               </motion.a>
               <motion.a 
-                whileHover={{ y: -3 }}
+                whileHover={{ y: -3, scale: 1.1 }}
                 href="https://linkedin.com/in/bimasha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-secondary-dark/10 flex items-center justify-center text-secondary/70 hover:text-primary dark:text-secondary-dark/70 dark:hover:text-primary-dark transition-colors"
+                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                aria-label="LinkedIn Profile"
               >
-                <FaLinkedin size={20} />
+                <FaLinkedin size={24} />
               </motion.a>
               <motion.a 
-                whileHover={{ y: -3 }}
+                whileHover={{ y: -3, scale: 1.1 }}
                 href="https://twitter.com/bimasha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-secondary-dark/10 flex items-center justify-center text-secondary/70 hover:text-primary dark:text-secondary-dark/70 dark:hover:text-primary-dark transition-colors"
+                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                aria-label="Twitter Profile"
               >
-                <FaTwitter size={20} />
+                <FaTwitter size={24} />
               </motion.a>
               <motion.a 
-                whileHover={{ y: -3 }}
+                whileHover={{ y: -3, scale: 1.1 }}
                 href="mailto:contact@bimasha.com" 
-                className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-secondary-dark/10 flex items-center justify-center text-secondary/70 hover:text-primary dark:text-secondary-dark/70 dark:hover:text-primary-dark transition-colors"
+                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                aria-label="Email Contact"
               >
-                <MdEmail size={20} />
+                <MdEmail size={24} />
               </motion.a>
             </div>
           </motion.div>
