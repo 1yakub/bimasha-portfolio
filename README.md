@@ -1,37 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BIMASHA PORTFOLIO
 
-## Getting Started
+<div align="center">
+  <img src="public/images/bimasha.png" alt="Bimasha Portfolio" width="180" height="180" style="border: 4px solid #000; border-radius: 2px; box-shadow: 8px 8px 0 rgba(0,0,0,1);">
+  
+  <h3 style="letter-spacing: 3px; text-transform: uppercase; margin-top: 20px;">
+    DIGITAL CRAFTSMANSHIP | PREMIUM WEB EXPERIENCES
+  </h3>
+</div>
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ▓█ OVERVIEW
+
+**BIMASHA PORTFOLIO** is a meticulously crafted digital showcase built with Next.js, Tailwind CSS, and Framer Motion. This portfolio represents the intersection of brutalist design principles and luxury aesthetics, creating a distinctive digital presence that stands apart from conventional portfolio websites.
+
+<br>
+
+## ▓█ KEY FEATURES
+
+```
+┌─────────────────────────────────────────┐
+│ ARCHITECTURAL HIGHLIGHTS                │
+└─────────────────────────────────────────┘
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **RESPONSIVE BRUTALISM** — Embraces raw, unfiltered design elements while maintaining perfect responsiveness across all devices
+- **MOTION INTELLIGENCE** — Sophisticated animations that respond to user interaction without overwhelming the experience
+- **TYPOGRAPHIC HIERARCHY** — Carefully selected font pairings that balance readability with distinctive character
+- **PERFORMANCE OPTIMIZATION** — Blazing fast load times with optimized assets and efficient code structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ▓█ TECHNICAL SPECIFICATIONS
 
-## Learn More
+```
+┌─────────────────────────────────────────┐
+│ BUILT WITH PREMIUM TECHNOLOGIES         │
+└─────────────────────────────────────────┘
+```
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 14** — React framework with server-side rendering and static site generation
+- **Tailwind CSS** — Utility-first CSS framework for rapid UI development
+- **Framer Motion** — Production-ready motion library for React
+- **TypeScript** — Strongly typed programming language that builds on JavaScript
+- **Vercel** — Platform for frontend frameworks and static sites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ▓█ INSTALLATION
 
-## Deploy on Vercel
+```bash
+# CLONE THE REPOSITORY
+git clone https://github.com/1yakub/bimasha-portfolio.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# NAVIGATE TO PROJECT DIRECTORY
+cd bimasha-portfolio
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# bimasha-portfolio" 
+# INSTALL DEPENDENCIES
+npm install
+
+# START DEVELOPMENT SERVER
+npm run dev
+```
+
+<br>
+
+## ▓█ STRUCTURE
+
+```
+┌─────────────────────────────────────────┐
+│ ARCHITECTURAL BLUEPRINT                 │
+└─────────────────────────────────────────┘
+```
+
+```
+bimasha-portfolio/
+├── public/           # Static assets
+├── src/              # Source files
+│   ├── app/          # Next.js app directory
+│   ├── components/   # Reusable components
+│   ├── lib/          # Utility functions
+│   └── once-ui/      # Custom UI component library
+├── tailwind.config.ts # Tailwind configuration
+└── tsconfig.json     # TypeScript configuration
+```
+
+<br>
+
+## ▓█ EXPERIENCE
+
+The portfolio is divided into distinct sections, each meticulously crafted to showcase different aspects of professional expertise:
+
+- **HOME** — An immersive introduction with dynamic elements
+- **ABOUT** — Professional journey with interactive timeline
+- **PROJECTS** — Showcase of selected works with detailed case studies
+- **CASE STUDIES** — In-depth analysis of significant projects
+- **NEWSLETTER** — Subscription option for updates and insights
+
+<br>
+
+## ▓█ DEPLOYMENT
+
+This portfolio is deployed on Vercel with continuous integration. Each push to the main branch triggers an automatic deployment.
+
+```
+PRODUCTION URL: https://bimasha.vercel.app
+```
+
+<br>
+
+## ▓█ LICENSE
+
+```
+┌─────────────────────────────────────────┐
+│ PROPRIETARY & CONFIDENTIAL              │
+└─────────────────────────────────────────┘
+```
+
+Copyright © 2024 Bimasha. All Rights Reserved.
+
+<br>
+
+<div align="center">
+  <p style="letter-spacing: 2px; font-weight: bold;">
+    CRAFTED WITH PRECISION — DESIGNED WITH PURPOSE
+  </p>
+</div>
