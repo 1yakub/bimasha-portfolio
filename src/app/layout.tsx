@@ -58,8 +58,8 @@ export default function RootLayout({
             (function() {
               try {
                 const savedTheme = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+                // Default to light mode instead of system preference
+                const isDark = savedTheme === 'dark';
                 
                 if (isDark) {
                   document.documentElement.classList.add('dark');
@@ -74,7 +74,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-screen flex flex-col bg-background dark:bg-background-dark text-secondary dark:text-secondary-dark font-sans transition-colors duration-300">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {/* Premium background effects */}
           <div className="fixed inset-0 bg-[url('/subtle-dots.svg')] dark:bg-[url('/subtle-dots-dark.svg')] bg-repeat opacity-5 pointer-events-none z-0"></div>
           

@@ -15,10 +15,9 @@ export default function ThemeToggle() {
     // Check if user has a theme preference in localStorage
     try {
       const savedTheme = localStorage.getItem('theme')
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
       
-      // Set initial theme based on saved preference or system preference
-      const initialDarkMode = savedTheme === 'dark' || (!savedTheme && prefersDark)
+      // Default to light mode instead of system preference
+      const initialDarkMode = savedTheme === 'dark'
       setIsDarkMode(initialDarkMode)
       
       // Apply theme to document
