@@ -45,3 +45,4 @@ next-env.d.ts
 repomix-output.txt
 
 .vercel
+"src/once-ui/" 
