@@ -478,7 +478,7 @@ const AboutClient = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="brutalist-offset p-8"
+          className="relative mt-24 mb-8 p-8 border-3 border-accent dark:border-accent-dark rounded-lg shadow-brutalist dark:shadow-brutalist-dark bg-white dark:bg-navy-800"
         >
           <h2 className="text-2xl md:text-3xl font-bold font-display mb-4 text-center">
             Let's Work Together
