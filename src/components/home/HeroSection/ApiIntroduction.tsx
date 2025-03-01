@@ -49,7 +49,7 @@ export default function ApiIntroduction() {
           transition={{ delay: 0.6 }}
           className="bg-gray-50 dark:bg-navy-700 p-3 rounded-md"
         >
-          <span className="text-gray-400 dark:text-gray-500">// Response</span>
+          <span className="text-gray-400 dark:text-gray-500">{/* Response */}</span>
           <div className="space-y-1">
             <div className="text-gray-700 dark:text-gray-300">{"{"}</div>
             <div className="ml-4 text-gray-700 dark:text-gray-300">
