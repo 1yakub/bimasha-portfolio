@@ -15,6 +15,7 @@ interface Skill {
     name: string
     issuer?: string
     date?: string
+    url?: string
   }[]
 }
 
