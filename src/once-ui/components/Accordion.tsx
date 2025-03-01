@@ -49,7 +49,7 @@ const Accordion: React.FC<AccordionProps> = forwardRef(
           </Heading>
           <Icon
             name="chevronDown"
-            size="m"
+            size="md"
             style={{
               display: "flex",
               transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
