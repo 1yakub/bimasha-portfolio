@@ -1,10 +1,11 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
+import { MdEmail, MdCalendarMonth } from 'react-icons/md'
+import { BsArrowUpRight } from 'react-icons/bs'
 import Container from '@/components/ui/container'
 
 const AboutClient = () => {
@@ -263,7 +264,11 @@ const AboutClient = () => {
               {/* Main image container */}
               <motion.div
                 className="relative w-full h-full bg-white dark:bg-navy-800 overflow-hidden"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ 
+                  scale: 1.03,
+                  rotate: -1,
+                  boxShadow: "10px 10px 0 rgba(0, 0, 0, 0.8)"
+                }}
                 transition={{ 
                   type: "spring",
                   stiffness: 300,
@@ -274,9 +279,18 @@ const AboutClient = () => {
                 <div className="absolute inset-0 border-[3px] border-black dark:border-white dark:border-opacity-80 z-20">
                   {/* Terminal-like top bar */}
                   <div className="absolute top-0 left-0 right-0 h-6 bg-black dark:bg-navy-900 flex items-center px-3 gap-1">
-                    <div className="w-2 h-2 rounded-full bg-red-500" />
-                    <div className="w-2 h-2 rounded-full bg-yellow-500" />
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
+                    <motion.div 
+                      className="w-2 h-2 rounded-full bg-red-500"
+                      whileHover={{ scale: 1.2 }}
+                    />
+                    <motion.div 
+                      className="w-2 h-2 rounded-full bg-yellow-500"
+                      whileHover={{ scale: 1.2 }}
+                    />
+                    <motion.div 
+                      className="w-2 h-2 rounded-full bg-green-500"
+                      whileHover={{ scale: 1.2 }}
+                    />
                     <span className="text-white text-[10px] ml-2 opacity-60 font-mono">viewing: bimasha.png</span>
                   </div>
                 </div>
@@ -300,7 +314,19 @@ const AboutClient = () => {
                     className="absolute bottom-4 right-4 bg-white dark:bg-navy-700 text-primary dark:text-white px-3 py-1 
                               font-mono text-sm shadow-brutalist dark:shadow-brutalist-dark border-2 border-black dark:border-white
                               flex items-center gap-2 z-30"
-                    whileHover={{ y: -2, x: -2 }}
+                    whileHover={{ 
+                      y: -5, 
+                      x: -5,
+                      boxShadow: "5px 5px 0 rgba(0, 0, 0, 0.8)"
+                    }}
+                    animate={{
+                      y: [0, -3, 0],
+                      transition: {
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }
+                    }}
                   >
                     <span className="w-2 h-2 bg-accent dark:bg-accent-dark rounded-full animate-pulse" />
                     <span>Available for Work</span>
@@ -410,45 +436,81 @@ const AboutClient = () => {
             </div>
 
             {/* Social Links */}
-            <div className="mt-8 flex gap-4">
-              <motion.a 
-                whileHover={{ y: -3, scale: 1.1 }}
+            <div className="mt-8 flex gap-4 relative z-20">
+              <a 
                 href="https://github.com/bimasha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                className="block relative z-20"
                 aria-label="GitHub Profile"
+                onClick={(e) => e.stopPropagation()}
               >
-                <FaGithub size={24} />
-              </motion.a>
-              <motion.a 
-                whileHover={{ y: -3, scale: 1.1 }}
+                <motion.div 
+                  whileHover={{ 
+                    y: -5, 
+                    scale: 1.1,
+                    boxShadow: "5px 5px 0 rgba(0, 0, 0, 0.2)"
+                  }}
+                  className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-[#333333] dark:hover:text-[#333333] hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                >
+                  <FaGithub size={24} />
+                </motion.div>
+              </a>
+              <a 
                 href="https://linkedin.com/in/bimasha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                className="block relative z-20"
                 aria-label="LinkedIn Profile"
+                onClick={(e) => e.stopPropagation()}
               >
-                <FaLinkedin size={24} />
-              </motion.a>
-              <motion.a 
-                whileHover={{ y: -3, scale: 1.1 }}
+                <motion.div 
+                  whileHover={{ 
+                    y: -5, 
+                    scale: 1.1,
+                    boxShadow: "5px 5px 0 rgba(0, 0, 0, 0.2)"
+                  }}
+                  className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-[#0077B5] dark:hover:text-[#0077B5] hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                >
+                  <FaLinkedin size={24} />
+                </motion.div>
+              </a>
+              <a 
                 href="https://twitter.com/bimasha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                className="block relative z-20"
                 aria-label="Twitter Profile"
+                onClick={(e) => e.stopPropagation()}
               >
-                <FaTwitter size={24} />
-              </motion.a>
-              <motion.a 
-                whileHover={{ y: -3, scale: 1.1 }}
+                <motion.div 
+                  whileHover={{ 
+                    y: -5, 
+                    scale: 1.1,
+                    boxShadow: "5px 5px 0 rgba(0, 0, 0, 0.2)"
+                  }}
+                  className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2] hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                >
+                  <FaTwitter size={24} />
+                </motion.div>
+              </a>
+              <a 
                 href="mailto:contact@bimasha.com" 
-                className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                className="block relative z-20"
                 aria-label="Email Contact"
+                onClick={(e) => e.stopPropagation()}
               >
-                <MdEmail size={24} />
-              </motion.a>
+                <motion.div 
+                  whileHover={{ 
+                    y: -5, 
+                    scale: 1.1,
+                    boxShadow: "5px 5px 0 rgba(0, 0, 0, 0.2)"
+                  }}
+                  className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-secondary-dark/20 flex items-center justify-center text-primary dark:text-primary-dark hover:text-[#EA4335] dark:hover:text-[#EA4335] hover:bg-secondary/30 dark:hover:bg-secondary-dark/30 transition-all duration-300 cursor-pointer shadow-md"
+                >
+                  <MdEmail size={24} />
+                </motion.div>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -1068,135 +1130,166 @@ function partition(arr, left, right) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="brutalist-offset p-10 mt-28 relative z-10 border-4 border-black dark:border-white dark:border-opacity-80"
+          className="mt-28 relative z-10"
         >
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-5 dark:opacity-10 overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] dark:bg-[url('/grid-pattern-dark.svg')] bg-repeat opacity-30"></div>
-            <div className="absolute bottom-0 right-0 w-40 h-40 bg-accent dark:bg-accent-dark opacity-20 rounded-full blur-[50px]"></div>
-            <div className="absolute top-0 left-0 w-40 h-40 bg-primary dark:bg-primary-dark opacity-20 rounded-full blur-[50px]"></div>
-          </div>
-          
-          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-navy-900 px-6 py-2 border-2 border-black dark:border-white">
-            <h2 className="text-xl md:text-2xl font-bold font-display text-center flex items-center gap-2">
-              <motion.span
-                animate={{ rotate: [0, 10, 0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="inline-block text-accent dark:text-accent-dark"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
-              </motion.span>
-              Let's Work Together
-            </h2>
-          </div>
-          
-          <div className="relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-              <div className="md:w-2/3">
-                <p className="text-base md:text-lg text-secondary/80 dark:text-secondary-dark/80 mb-4">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M22 16.92v3a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    <span>Available for freelance projects</span>
+          {/* Neo-brutalist container with thick border and offset shadow */}
+          <div className="relative bg-white dark:bg-navy-900 border-4 border-black dark:border-white dark:border-opacity-80 p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)]">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-5 dark:opacity-10 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] dark:bg-[url('/grid-pattern-dark.svg')] bg-repeat opacity-30"></div>
+              <div className="absolute bottom-0 right-0 w-40 h-40 bg-accent dark:bg-accent-dark opacity-20 rounded-full blur-[50px]"></div>
+              <div className="absolute top-0 left-0 w-40 h-40 bg-primary dark:bg-primary-dark opacity-20 rounded-full blur-[50px]"></div>
+            </div>
+            
+            {/* Title badge */}
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-navy-900 px-6 py-2 border-2 border-black dark:border-white">
+              <h2 className="text-xl md:text-2xl font-bold font-display text-center flex items-center gap-2">
+                <motion.span
+                  animate={{ rotate: [0, 10, 0, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="inline-block text-accent dark:text-accent-dark"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
+                </motion.span>
+                Let's Work Together
+              </h2>
+            </div>
+            
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
+                <div className="md:w-2/3">
+                  <p className="text-base md:text-lg text-secondary/80 dark:text-secondary-dark/80 mb-4">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                  </p>
+                  <div className="space-y-3">
+                    <motion.div 
+                      whileHover={{ x: 5 }}
+                      className="flex items-center gap-3 p-2 border-l-4 border-accent dark:border-accent-dark"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-accent/20 dark:bg-accent-dark/20 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M22 16.92v3a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                      </div>
+                      <span>Available for freelance projects</span>
+                    </motion.div>
+                    <motion.div 
+                      whileHover={{ x: 5 }}
+                      className="flex items-center gap-3 p-2 border-l-4 border-accent dark:border-accent-dark"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-accent/20 dark:bg-accent-dark/20 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                      </div>
+                      <span>Quick response within 24 hours</span>
+                    </motion.div>
+                    <motion.div 
+                      whileHover={{ x: 5 }}
+                      className="flex items-center gap-3 p-2 border-l-4 border-accent dark:border-accent-dark"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-accent/20 dark:bg-accent-dark/20 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      </div>
+                      <span>Secure and confidential discussions</span>
+                    </motion.div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    <span>Quick response within 24 hours</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span>Secure and confidential discussions</span>
-                  </div>
+                  
+                  {/* Contact form teaser */}
+                  <motion.div 
+                    whileHover={{ 
+                      scale: 1.02, 
+                      boxShadow: "5px 5px 0px 0px rgba(0,0,0,1)",
+                      y: -5
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="mt-6 p-4 bg-white/50 dark:bg-navy-800/50 border-2 border-black dark:border-white/80 rounded-lg"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-accent/20 dark:bg-accent-dark/20 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><circle cx="12" cy="10" r="2"></circle><line x1="8" x2="8" y1="2" y2="4"></line><line x1="16" x2="16" y1="2" y2="4"></line></svg>
+                      </div>
+                      <span className="font-medium">Let's schedule a discovery call</span>
+                    </div>
+                    <p className="text-sm text-secondary/70 dark:text-secondary-dark/70">
+                      Book a 30-minute consultation to discuss your project requirements and explore how we can work together.
+                    </p>
+                  </motion.div>
                 </div>
                 
-                {/* Contact form teaser */}
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="mt-6 p-4 bg-white/50 dark:bg-navy-800/50 border border-black/10 dark:border-white/10 rounded-lg"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-accent/20 dark:bg-accent-dark/20 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><circle cx="12" cy="10" r="2"></circle><line x1="8" x2="8" y1="2" y2="4"></line><line x1="16" x2="16" y1="2" y2="4"></line></svg>
+                <div className="md:w-1/3 flex justify-center">
+                  <motion.div
+                    whileHover={{ 
+                      y: -10,
+                      rotate: -2,
+                      boxShadow: "8px 8px 0px 0px rgba(0,0,0,1)"
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    className="relative border-2 border-black dark:border-white/80 bg-white dark:bg-navy-800 p-1"
+                  >
+                    {/* Collaboration illustration */}
+                    <div className="w-[200px] h-[200px] bg-gradient-to-br from-accent/20 to-accent/40 dark:from-accent-dark/20 dark:to-accent-dark/40 flex items-center justify-center overflow-hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark">
+                        <path d="M17 5H7v10h10V5Z"/>
+                        <path d="M8 2v3"/>
+                        <path d="M16 2v3"/>
+                        <path d="M7 10h10"/>
+                        <path d="M2 12v6a2 2 0 0 0 2 2h4"/>
+                        <path d="M22 12v6a2 2 0 0 1-2 2h-4"/>
+                      </svg>
+                      
+                      {/* Decorative elements */}
+                      <div className="absolute top-5 left-5 w-10 h-10 border-2 border-accent dark:border-accent-dark rounded-full opacity-20 animate-pulse"></div>
+                      <div className="absolute bottom-5 right-5 w-16 h-16 border-2 border-accent dark:border-accent-dark rounded-full opacity-20 animate-pulse" style={{ animationDelay: "1s" }}></div>
                     </div>
-                    <span className="font-medium">Let's schedule a discovery call</span>
-                  </div>
-                  <p className="text-sm text-secondary/70 dark:text-secondary-dark/70">
-                    Book a 30-minute consultation to discuss your project requirements and explore how we can work together.
-                  </p>
-                </motion.div>
+                    
+                    {/* Terminal-like top bar */}
+                    <div className="absolute top-0 left-0 right-0 h-6 bg-black dark:bg-navy-900 flex items-center px-3 gap-1">
+                      <motion.div 
+                        className="w-2 h-2 rounded-full bg-red-500"
+                        whileHover={{ scale: 1.2 }}
+                      />
+                      <motion.div 
+                        className="w-2 h-2 rounded-full bg-yellow-500"
+                        whileHover={{ scale: 1.2 }}
+                      />
+                      <motion.div 
+                        className="w-2 h-2 rounded-full bg-green-500"
+                        whileHover={{ scale: 1.2 }}
+                      />
+                      <span className="text-white text-[10px] ml-2 opacity-60 font-mono">collaboration.exe</span>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
               
-              <div className="md:w-1/3 flex justify-center">
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 10 }}
+              {/* CTA Button */}
+              <div className="flex justify-center mt-8">
+                <motion.a
+                  href="mailto:contact@bimasha.com"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "5px 5px 0px 0px rgba(0,0,0,1)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative inline-flex items-center gap-2 bg-accent dark:bg-accent-dark text-white px-6 py-3 font-medium border-2 border-black dark:border-white/80 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.8)] transition-all duration-300"
                 >
-                  {/* Fallback for missing collaboration.png */}
-                  <div className="w-[200px] h-[200px] bg-gradient-to-br from-accent/20 to-accent/40 dark:from-accent-dark/20 dark:to-accent-dark/40 rounded-lg shadow-brutalist dark:shadow-brutalist-dark flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark">
-                      <path d="M17 5H7v10h10V5Z"/>
-                      <path d="M8 2v3"/>
-                      <path d="M16 2v3"/>
-                      <path d="M7 10h10"/>
-                      <path d="M2 12v6a2 2 0 0 0 2 2h4"/>
-                      <path d="M22 12v6a2 2 0 0 1-2 2h-4"/>
-                    </svg>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-            
-            <div className="flex justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ 
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20
-                }}
-              >
-                <a 
-                  href="mailto:contact@bimasha.com" 
-                  className="mc-button-primary inline-flex items-center gap-2 px-8 py-3 text-lg relative overflow-hidden group"
-                >
-                  <span className="relative z-10">Get In Touch</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  <span>Get in Touch</span>
+                  <BsArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   
-                  {/* Button animation overlay */}
-                  <span className="absolute inset-0 bg-accent dark:bg-accent-dark transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-                </a>
-              </motion.div>
-            </div>
-            
-            {/* Social proof */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-8 text-center"
-            >
-              <p className="text-sm text-secondary/60 dark:text-secondary-dark/60 mb-3">Trusted by companies worldwide</p>
-              <div className="flex flex-wrap justify-center gap-6 opacity-60">
-                {/* Fallback for missing logo images */}
-                <div className="w-[80px] h-[30px] bg-white/80 dark:bg-navy-800/80 rounded flex items-center justify-center">
-                  <span className="text-xs font-medium text-secondary/70 dark:text-secondary-dark/70">Company 1</span>
-                </div>
-                <div className="w-[80px] h-[30px] bg-white/80 dark:bg-navy-800/80 rounded flex items-center justify-center">
-                  <span className="text-xs font-medium text-secondary/70 dark:text-secondary-dark/70">Company 2</span>
-                </div>
-                <div className="w-[80px] h-[30px] bg-white/80 dark:bg-navy-800/80 rounded flex items-center justify-center">
-                  <span className="text-xs font-medium text-secondary/70 dark:text-secondary-dark/70">Company 3</span>
-                </div>
-                <div className="w-[80px] h-[30px] bg-white/80 dark:bg-navy-800/80 rounded flex items-center justify-center">
-                  <span className="text-xs font-medium text-secondary/70 dark:text-secondary-dark/70">Company 4</span>
+                  {/* Decorative corner */}
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-white dark:bg-navy-900 border-2 border-black dark:border-white/80"></div>
+                </motion.a>
+              </div>
+              
+              {/* Social proof */}
+              <div className="mt-12">
+                <p className="text-center text-sm text-secondary/60 dark:text-secondary-dark/60 mb-4">Trusted by companies worldwide</p>
+                <div className="flex flex-wrap justify-center gap-8 opacity-60">
+                  {/* Company logos would go here */}
+                  <div className="w-16 h-8 bg-secondary/20 dark:bg-secondary-dark/20 rounded"></div>
+                  <div className="w-16 h-8 bg-secondary/20 dark:bg-secondary-dark/20 rounded"></div>
+                  <div className="w-16 h-8 bg-secondary/20 dark:bg-secondary-dark/20 rounded"></div>
+                  <div className="w-16 h-8 bg-secondary/20 dark:bg-secondary-dark/20 rounded"></div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </Container>
