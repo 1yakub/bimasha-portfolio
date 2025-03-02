@@ -480,29 +480,112 @@ const AboutClient = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="relative mt-24 mb-8 p-8 border-3 border-accent dark:border-accent-dark rounded-lg shadow-brutalist dark:shadow-brutalist-dark bg-white dark:bg-navy-800"
         >
-          <h2 className="text-2xl md:text-3xl font-bold font-display mb-4 text-center">
-            Let's Work Together
-          </h2>
-          <p className="text-lg text-secondary/80 dark:text-secondary-dark/80 mb-6 max-w-2xl mx-auto text-center">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
-          <div className="flex justify-center">
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ 
-                type: "spring",
-                stiffness: 300,
-                damping: 20
-              }}
-            >
-              <a 
-                href="mailto:contact@bimasha.com" 
-                className="mc-button-primary inline-flex items-center gap-2"
-              >
-                <span>Get In Touch</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </a>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold font-display mb-4 text-primary dark:text-primary-dark">
+                Let's Work Together
+              </h2>
+              <p className="text-lg text-secondary/80 dark:text-secondary-dark/80 mb-6">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }}
+                >
+                  <a 
+                    href="mailto:contact@bimasha.com" 
+                    className="mc-button-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+                  >
+                    <span>Send Email</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </a>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }}
+                >
+                  <a 
+                    href="https://calendly.com/bimasha/30min" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mc-button-secondary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+                  >
+                    <span>Schedule a Call</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calendar"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                  </a>
+                </motion.div>
+              </div>
+            </div>
+            
+            <div className="relative hidden md:block">
+              <div className="relative w-full h-64 overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent z-10"></div>
+                <Image 
+                  src="/images/collaboration.jpg" 
+                  alt="Collaboration" 
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -bottom-4 -right-4 w-32 h-32">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-accent dark:text-accent-dark opacity-20">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="8" strokeDasharray="10 15" />
+                </svg>
+              </div>
+              <div className="absolute -top-6 -left-6 w-24 h-24 rotate-45">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-accent dark:text-accent-dark opacity-20">
+                  <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" strokeWidth="8" strokeDasharray="10 15" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          {/* Additional contact info */}
+          <div className="mt-8 pt-6 border-t border-accent/20 dark:border-accent-dark/20">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div className="p-4">
+                <div className="flex justify-center mb-2">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 dark:bg-accent-dark/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                </div>
+                <h3 className="text-sm font-semibold">Phone</h3>
+                <p className="text-secondary/80 dark:text-secondary-dark/80">+1 (555) 123-4567</p>
+              </div>
+              
+              <div className="p-4">
+                <div className="flex justify-center mb-2">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 dark:bg-accent-dark/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                </div>
+                <h3 className="text-sm font-semibold">Email</h3>
+                <p className="text-secondary/80 dark:text-secondary-dark/80">contact@bimasha.com</p>
+              </div>
+              
+              <div className="p-4">
+                <div className="flex justify-center mb-2">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 dark:bg-accent-dark/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent dark:text-accent-dark"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                </div>
+                <h3 className="text-sm font-semibold">Location</h3>
+                <p className="text-secondary/80 dark:text-secondary-dark/80">San Francisco, CA</p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </Container>
